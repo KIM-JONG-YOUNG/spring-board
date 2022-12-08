@@ -1,4 +1,4 @@
-package edu.jong.board.domain.test;
+package edu.jong.board.member.test;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,7 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @SpringBootTest
 @SpringBootApplication(scanBasePackages = BoardConstants.ROOT_PACKAGE)
-public class SpringBoardDomainTests {
+public class SpringBoardRoleDomainTests {
 
 	@Test
 	void contextLoad() {

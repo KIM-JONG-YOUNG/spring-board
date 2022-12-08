@@ -9,6 +9,7 @@
 	<packaging>pom</packaging>
 	<modules>
 		<module>spring-board-domain-core</module>
+		<module>spring-board-role-domain</module>
 	</modules>
 
 	<dependencies>

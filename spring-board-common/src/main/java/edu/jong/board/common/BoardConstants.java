@@ -9,8 +9,13 @@ public final class BoardConstants {
 	
 	public static final class TableNames {
 
-		public static final String ROLE = "tb_role";
+		public static final String TB_ROLE = "tb_role";
 		
 	}
-	
+
+	public static final class CacheKeys {
+
+		public static final String ROLE_KEY = "role::";
+
+	}
 }

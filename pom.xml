@@ -18,6 +18,7 @@
 		<module>spring-board-clients</module>
 		<module>spring-board-domains</module>
 		<module>spring-board-services</module>
+		<module>spring-board-redis</module>
 	</modules>
 
 	<properties>
@@ -106,6 +107,12 @@
 			<dependency>
 				<groupId>edu.jong</groupId>
 				<artifactId>spring-board-common</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+			<!-- 게시판 Redis 캐싱 -->
+			<dependency>
+				<groupId>edu.jong</groupId>
+				<artifactId>spring-board-redis</artifactId>
 				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
 			<!-- 게시판 도메인 코어 -->

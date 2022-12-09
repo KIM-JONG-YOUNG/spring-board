@@ -52,7 +52,7 @@ public @interface AntPathPattern {
 			if (!value.startsWith("http")) 
 				return setValidMessage(context, "Protocol이 존재하지 않습니다.");
 				
-			if (MATCHER.isPattern(value)) 
+			if (!MATCHER.isPattern(value)) 
 				return setValidMessage(context, "Ant Path Pattern이 아닙니다.");
 			
 			return true;

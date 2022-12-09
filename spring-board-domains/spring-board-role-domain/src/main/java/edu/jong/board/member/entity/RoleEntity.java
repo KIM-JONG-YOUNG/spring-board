@@ -23,7 +23,7 @@ import lombok.ToString;
 @Getter
 @ToString
 @Entity
-@Table(name = TableNames.ROLE)
+@Table(name = TableNames.TB_ROLE)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public final class RoleEntity extends BaseEntity {
 

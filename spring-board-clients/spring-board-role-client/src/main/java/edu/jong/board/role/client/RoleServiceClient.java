@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import edu.jong.board.client.response.PagingList;
 import edu.jong.board.common.type.State;
 import edu.jong.board.role.request.RoleAddParam;
 import edu.jong.board.role.request.RoleModifyParam;
@@ -51,7 +52,7 @@ public interface RoleServiceClient {
 
 	@Operation(summary = "권한 검색")
 	@GetMapping(value = "/roles/search")
-	ResponseEntity<RoleDetails> searchRoleList(
+	ResponseEntity<PagingList<RoleDetails>> searchRoleList(
 			RoleSearchCond cond);
 
 }

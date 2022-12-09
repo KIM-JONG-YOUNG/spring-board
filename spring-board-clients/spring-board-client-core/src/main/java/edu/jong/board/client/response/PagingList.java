@@ -16,7 +16,7 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
-public abstract class PagingList<T> {
+public class PagingList<T> {
 
 	@Schema(description = "페이지 목록")
 	private List<T> list;

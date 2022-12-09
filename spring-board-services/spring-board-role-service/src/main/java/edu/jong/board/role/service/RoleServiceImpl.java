@@ -52,7 +52,7 @@ public class RoleServiceImpl implements RoleService {
 	private final JPAQueryFactory jpaQueryFactory;
 	private final QRoleEntity TB_ROLE = QRoleEntity.roleEntity;
 	
-	@PostConstruct
+	@PostConstruct 
 	private void init() {
 		redisService.changeObjectMapper(new ObjectMapper()
 				.registerModule(new JavaTimeModule()));

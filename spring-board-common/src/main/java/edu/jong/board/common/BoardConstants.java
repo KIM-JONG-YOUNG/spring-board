@@ -18,4 +18,5 @@ public final class BoardConstants {
 		public static final String ROLE_KEY = "role::";
 
 	}
+
 }

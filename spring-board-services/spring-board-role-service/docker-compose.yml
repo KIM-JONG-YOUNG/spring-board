@@ -1,0 +1,39 @@
+version: "3"
+
+services:
+  role-service:
+    image: openjdk:8
+    hostname: role-service
+    container_name: role-service
+    environment:
+      - TZ=Asia/Seoul
+    ports:
+      - 8001:8001
+    volumes:
+      - ./src/main/resources:/app/resources
+      - ./target/spring-board-role-service-0.0.1-SNAPSHOT.jar:/app/application.jar
+    command: java -jar -Dspring.config.location=/app/resources/application-deploy.yml /app/application.jar
+    networks:
+      - default
+      - mariadb
+      - redis
+      - config
+      - discovery
+
+networks:
+  default:
+    name: board_net
+    external: true
+  mariadb:
+    name: mariadb_net
+    external: true
+  redis:
+    name: redis_net
+    external: true
+  config:
+    name: config_net
+    external: true
+  discovery:
+    name: discovery_net
+    external: true
+    

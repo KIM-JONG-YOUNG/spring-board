@@ -17,7 +17,7 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
-public class MemberModifyPasswordParam implements Serializable {
+public class MemberPasswordModifyParam implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 

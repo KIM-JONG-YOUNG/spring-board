@@ -14,7 +14,7 @@ public class SpringBoardRoleDomainTests {
 
 	@Test
 	void contextLoad() {
-		log.info("Context Load!!");
+		log.info("Create Table!!");
 	}
 	
 }

@@ -4,16 +4,16 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>edu.jong</groupId>
-		<artifactId>spring-board-domains</artifactId>
+		<artifactId>spring-board-clients</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>spring-board-role-domain</artifactId>
+	<artifactId>spring-board-role-client</artifactId>
 
 	<dependencies>
-		<!-- 게시판 도메인 코어 -->
+		<!-- 게시판 클라이언트 코어 -->
 		<dependency>
 			<groupId>edu.jong</groupId>
-			<artifactId>spring-board-domain-core</artifactId>
+			<artifactId>spring-board-client-core</artifactId>
 		</dependency>
 	</dependencies>
 

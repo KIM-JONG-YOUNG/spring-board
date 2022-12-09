@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -12,10 +14,10 @@
 	<packaging>pom</packaging>
 
 	<modules>
+		<module>spring-board-common</module>
 		<module>spring-board-clients</module>
 		<module>spring-board-domains</module>
 		<module>spring-board-services</module>
-		<module>spring-board-common</module>
 	</modules>
 
 	<properties>
@@ -24,6 +26,7 @@
 		<mapstruct.version>1.5.2.Final</mapstruct.version>
 		<spring-cloud.version>2021.0.5</spring-cloud.version>
 		<openapi.ui.version>1.6.11</openapi.ui.version>
+		<mariadb.version>2.7.4</mariadb.version>
 	</properties>
 
 	<dependencies>
@@ -92,6 +95,12 @@
 				<artifactId>jjwt</artifactId>
 				<version>${jjwt.version}</version>
 			</dependency>
+			<!-- mariadb -->
+			<dependency>
+				<groupId>org.mariadb.jdbc</groupId>
+				<artifactId>mariadb-java-client</artifactId>
+				<version>${mariadb.version}</version>
+			</dependency>
 
 			<!-- 공통 상수 -->
 			<dependency>
@@ -103,6 +112,24 @@
 			<dependency>
 				<groupId>edu.jong</groupId>
 				<artifactId>spring-board-domain-core</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+			<!-- 게시판 클라이언트 코어 -->
+			<dependency>
+				<groupId>edu.jong</groupId>
+				<artifactId>spring-board-client-core</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+			<!-- 게시판 권한 도메인 -->
+			<dependency>
+				<groupId>edu.jong</groupId>
+				<artifactId>spring-board-role-domain</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+			<!-- 게시판 권한 클라이언트 -->
+			<dependency>
+				<groupId>edu.jong</groupId>
+				<artifactId>spring-board-role-client</artifactId>
 				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
 		</dependencies>

@@ -29,19 +29,28 @@ public final class RoleEntity extends BaseEntity {
 
 	@Id 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "role_no", nullable = false, unique = true)
+	@Column(name = "role_no", 
+			nullable = false, 
+			unique = true)
 	private long no;
 	
-	@Column(name = "role_name", nullable = false, unique = true)
+	@Column(name = "role_name", 
+			length = 30, 
+			nullable = false, 
+			unique = true)
 	private String name;
 
 	@Setter
 	@Convert(converter = MethodAttributeConverter.class)
-	@Column(name = "role_access_method", nullable = false)
+	@Column(name = "role_access_method", 
+			length = 1, 
+			nullable = false)
 	private Method accessMethod;
 
 	@Setter
-	@Column(name = "role_access_url_pattern", nullable = false)
+	@Column(name = "role_access_url_pattern", 
+			length = 60, 
+			nullable = false)
 	private String accessUrlPattern;
 
 	@Builder

@@ -13,6 +13,7 @@
 		<module>spring-board-domain-core</module>
 		<module>spring-board-role-domain</module>
 		<module>spring-board-member-domain</module>
+		<module>spring-board-member-role-domain</module>
 	</modules>
 
 	<dependencies>

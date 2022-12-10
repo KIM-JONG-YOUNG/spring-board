@@ -168,13 +168,17 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	private BooleanExpression[] getBooleanExpressions(MemberSearchCond cond) {
+		
+		LocalDateTime from = (cond.getFrom() == null) ? null : 
+			LocalDateTime.of(cond.getFrom(), LocalTime.of(0, 0, 0));
+		LocalDateTime to = (cond.getTo() == null) ? null : 
+			LocalDateTime.of(cond.getTo(), LocalTime.of(23, 59, 59));
+		
 		return new BooleanExpression[] {
 				QueryDslUtils.containsIfPresent(TB_MEMBER.username, cond.getUsername()),
 				QueryDslUtils.containsIfPresent(TB_MEMBER.name, cond.getName()),
 				QueryDslUtils.equalsIfPresent(TB_MEMBER.gender, cond.getGender()),
-				QueryDslUtils.betweenIfPresent(TB_MEMBER.createdDate, 
-						LocalDateTime.of(cond.getFrom(), LocalTime.of(0, 0, 0)), 
-						LocalDateTime.of(cond.getTo(), LocalTime.of(23, 59, 59))),
+				QueryDslUtils.betweenIfPresent(TB_MEMBER.createdDate, from, to),
 				QueryDslUtils.equalsIfPresent(TB_MEMBER.state, State.ACTIVE)
 		};
 	}

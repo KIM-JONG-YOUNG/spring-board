@@ -8,32 +8,32 @@ services:
     environment:
       - TZ=Asia/Seoul
     ports:
-      - 8001:8001
+      - 18001:8001
     volumes:
-      - ./src/main/resources:/app/resources
+      - ./src/main/resources/application-docker.yml:/app/config/application.yml
       - ./target/spring-board-role-service-0.0.1-SNAPSHOT.jar:/app/application.jar
-    command: java -jar -Dspring.config.location=/app/resources/application-deploy.yml /app/application.jar
+    command: java -jar -Dspring.config.location=/app/config/application.yml /app/application.jar
     networks:
-      - default
-      - mariadb
-      - redis
-      - config
-      - discovery
+      - board_net
+      - mariadb_net
+      - redis_net
+      - config_net
+      - eureka_net
 
 networks:
-  default:
+  board_net:
     name: board_net
     external: true
-  mariadb:
+  mariadb_net:
     name: mariadb_net
     external: true
-  redis:
+  redis_net:
     name: redis_net
     external: true
-  config:
+  config_net:
     name: config_net
     external: true
-  discovery:
-    name: discovery_net
+  eureka_net:
+    name: eureka_net
     external: true
     

@@ -15,8 +15,8 @@ public class WebConfig implements WebMvcConfigurer {
 
 	@Bean
 	OpenAPI openAPI(
-			@Value("${springdoc.swagger-ui.title}") String title,
-			@Value("${springdoc.swagger-ui.version}") String version) {
+			@Value("${springdoc.title}") String title,
+			@Value("${springdoc.version}") String version) {
 		return new OpenAPI().info(new Info().title(title).version(version));
 	}
 	

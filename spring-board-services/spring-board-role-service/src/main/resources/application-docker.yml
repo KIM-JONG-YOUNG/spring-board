@@ -16,11 +16,11 @@ spring:
     host: redis
     port: 6379
   config:
-    import: optional:configserver:http://config-service:8888
+    import: optional:configserver:http://docker-config-service:8888
 
 springdoc:
+  title: Role API Documents
+  version: 1.0.0
   swagger-ui:
-    title: Role API Documents
-    version: 1.0.0
     path: /api-docs
   packages-to-scan: edu.jong.board.role

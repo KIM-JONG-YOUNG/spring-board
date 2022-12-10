@@ -2,15 +2,19 @@ server:
   port: 8001
   
 spring:
-  redis:
-    host: redis
-    port: 6379
   application:
     name: role-service
   profiles:
     active:
     - mariadb
     - service
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:schema-role.sql
+  redis:
+    host: redis
+    port: 6379
   config:
     import: optional:configserver:http://config-service:8888
 

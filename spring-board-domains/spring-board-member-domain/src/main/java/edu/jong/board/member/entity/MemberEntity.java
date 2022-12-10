@@ -25,7 +25,7 @@ import lombok.ToString;
 @Entity
 @Table(name = TableNames.TB_MEMBER)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class MemberEntity extends BaseEntity {
+public final class MemberEntity extends BaseEntity {
 
 	@Id 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

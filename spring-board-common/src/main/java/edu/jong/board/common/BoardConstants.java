@@ -16,6 +16,7 @@ public final class BoardConstants {
 	public static final class CacheKeys {
 		public static final String ROLE_KEY = "role::";
 		public static final String MEMBER_KEY = "member::";
+		public static final String MEMBER_ROLE_LIST_KEY = "memberRoleList::";
 	}
 
 }

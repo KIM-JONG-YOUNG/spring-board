@@ -1,0 +1,29 @@
+server:
+  port: 8003
+  
+spring:
+  application:
+    name: member-role-service
+  profiles:
+    active:
+    - mariadb
+    - service
+  sql:
+    init:
+      mode: always
+      schema-locations: 
+      - classpath:schema-role.sql
+      - classpath:schema-member.sql
+      - classpath:schema-member-role.sql
+  redis:
+    host: 127.0.0.1
+    port: 6379
+  config:
+    import: optional:configserver:http://127.0.0.1:8888
+
+springdoc:
+  title: Member Role API Documents
+  version: 1.0.0
+  swagger-ui:
+    path: /api-docs
+  packages-to-scan: edu.jong.board.member_role

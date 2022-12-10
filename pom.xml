@@ -151,6 +151,18 @@
 				<artifactId>spring-board-member-client</artifactId>
 				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
+			<!-- 게시판 사용자 권한 도메인 -->
+			<dependency>
+				<groupId>edu.jong</groupId>
+				<artifactId>spring-board-member-role-domain</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+			<!-- 게시판 사용자 권한 클라이언트 -->
+			<dependency>
+				<groupId>edu.jong</groupId>
+				<artifactId>spring-board-member-role-client</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 

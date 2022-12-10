@@ -1,0 +1,40 @@
+version: "3"
+
+services:
+  role-service:
+    image: openjdk:8
+    hostname: member-role-service
+    container_name: member-role-service
+    environment:
+      - TZ=Asia/Seoul
+    ports:
+      - 18003:8003
+    volumes:
+      - ./src/main/resources/application-docker.yml:/app/config/application.yml
+      - ./target/spring-board-member-role-service-0.0.1-SNAPSHOT.jar:/app/application.jar
+    command: java -jar -Dspring.config.location=/app/config/application.yml /app/application.jar
+    networks:
+      - board_net
+      - mariadb_net
+      - redis_net
+      - config_net
+      - eureka_net
+
+networks:
+  board_net:
+    name: board_net
+    external: true
+  mariadb_net:
+    name: mariadb_net
+    external: true
+  redis_net:
+    name: redis_net
+    external: true
+  config_net:
+    name: config_net
+    external: true
+  eureka_net:
+    name: eureka_net
+    external: true
+    
+    

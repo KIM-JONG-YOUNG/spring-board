@@ -39,7 +39,7 @@ public class MemberAddParam implements Serializable {
 	@Size(max = 30)
 	private String name;
 	
-	@Schema(description = "성별", defaultValue = "M")
+	@Schema(description = "성별", defaultValue = "MAIL")
 	@NotNull
 	private Gender gender;
 	

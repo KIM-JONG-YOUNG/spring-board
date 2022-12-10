@@ -146,13 +146,17 @@ public class RoleServiceImpl implements RoleService {
 	}
 
 	private BooleanExpression[] getBooleanExpressions(RoleSearchCond cond) {
+		
+		LocalDateTime from = (cond.getFrom() == null) ? null : 
+			LocalDateTime.of(cond.getFrom(), LocalTime.of(0, 0, 0));
+		LocalDateTime to = (cond.getTo() == null) ? null : 
+			LocalDateTime.of(cond.getTo(), LocalTime.of(23, 59, 59));
+		
 		return new BooleanExpression[] {
 				QueryDslUtils.containsIfPresent(TB_ROLE.name, cond.getName()),
 				QueryDslUtils.equalsIfPresent(TB_ROLE.accessMethod, cond.getAccessMethod()),
 				QueryDslUtils.containsIfPresent(TB_ROLE.accessUrlPattern, cond.getAccessUrlPattern()),
-				QueryDslUtils.betweenIfPresent(TB_ROLE.createdDate, 
-						LocalDateTime.of(cond.getFrom(), LocalTime.of(0, 0, 0)), 
-						LocalDateTime.of(cond.getTo(), LocalTime.of(23, 59, 59))),
+				QueryDslUtils.betweenIfPresent(TB_ROLE.createdDate, from, to),
 				QueryDslUtils.equalsIfPresent(TB_ROLE.state, State.ACTIVE)
 		};
 	}

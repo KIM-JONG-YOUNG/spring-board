@@ -27,7 +27,7 @@ public class MemberModifyParam implements Serializable {
 	@Size(max = 30)
 	private String name;
 	
-	@Schema(description = "성별", defaultValue = "M")
+	@Schema(description = "성별", defaultValue = "MAIL")
 	private Gender gender;
 	
 	@Schema(description = "이메일", defaultValue = "test@example.com")

@@ -19,8 +19,8 @@ spring:
     import: optional:configserver:http://127.0.0.1:8888
 
 springdoc:
+  title: Member API Documents
+  version: 1.0.0
   swagger-ui:
-    title: Member API Documents
-    version: 1.0.0
     path: /api-docs
   packages-to-scan: edu.jong.board.member

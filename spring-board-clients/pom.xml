@@ -13,6 +13,7 @@
 	<modules>
 		<module>spring-board-role-client</module>
 		<module>spring-board-client-core</module>
+		<module>spring-board-member-client</module>
 	</modules>
 
 	<dependencies>

@@ -26,7 +26,7 @@ public interface RoleMapper {
 	
 	RoleEntity toEntity(RoleAddParam param);
 	
-	RoleDetails todDetails(RoleEntity entity);
+	RoleDetails toDetails(RoleEntity entity);
 	
 	@BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
 	RoleEntity updateEntity(RoleModifyParam param, @MappingTarget RoleEntity entity);

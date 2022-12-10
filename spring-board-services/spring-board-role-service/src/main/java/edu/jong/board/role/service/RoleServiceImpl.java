@@ -72,7 +72,7 @@ public class RoleServiceImpl implements RoleService {
 		// 저장된 권한 정보 캐시 저장 
 		redisService.caching(
 				CacheKeys.ROLE_KEY + role.getNo(), 
-				roleMapper.todDetails(role), 60);
+				roleMapper.toDetails(role), 60);
 
 		return role.getNo();
 	}
@@ -91,7 +91,7 @@ public class RoleServiceImpl implements RoleService {
 		// 수정된 권한 정보 캐시 저장 
 		redisService.caching(
 				CacheKeys.ROLE_KEY + role.getNo(), 
-				roleMapper.todDetails(role), 60);
+				roleMapper.toDetails(role), 60);
 
 		return role.getNo();
 	}
@@ -111,7 +111,7 @@ public class RoleServiceImpl implements RoleService {
 		String cacheKey = CacheKeys.ROLE_KEY + role.getNo();
 		if (state == State.ACTIVE) {
 			redisService.caching(cacheKey, 
-					roleMapper.todDetails(role), 60);
+					roleMapper.toDetails(role), 60);
 		} else {
 			redisService.remove(cacheKey);
 		}
@@ -130,8 +130,8 @@ public class RoleServiceImpl implements RoleService {
 		// 캐시 데이터 조회 
 		return redisService.get(cacheKey, type).orElseGet(() -> {
 
-			// 캐시에 없을 경우 조회 
-			RoleDetails details = roleMapper.todDetails(roleRepository.findById(roleNo)
+			// 캐시에 없을 경우 DB 조회 
+			RoleDetails details = roleMapper.toDetails(roleRepository.findById(roleNo)
 					.orElseThrow(() -> new ResourceNotFoundException("권한이 존재하지 않습니다.")));
 
 			// 활성화 상태가 아닐 경우 오류 발생 
@@ -211,7 +211,7 @@ public class RoleServiceImpl implements RoleService {
 				.orderBy(orderCondition)
 				.offset(offset).limit(cond.getPageRows())
 				.fetch().stream()
-				.map(x -> roleMapper.todDetails(x))
+				.map(x -> roleMapper.toDetails(x))
 				.collect(Collectors.toList());
 
 		return new PagingList<RoleDetails>(list, cond, totalCount);

@@ -14,13 +14,6 @@ services:
       - ./target/spring-board-member-service-0.0.1-SNAPSHOT.jar:/app/application.jar
     command: java -jar -Dspring.config.location=/app/config/application.yml /app/application.jar
     networks:
-      - default
-      - mariadb
-      - redis
-      - config
-      - discovery
-
-    networks:
       - board_net
       - mariadb_net
       - redis_net

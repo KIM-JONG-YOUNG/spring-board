@@ -12,9 +12,6 @@ spring:
     init:
       mode: always
       schema-locations: classpath:schema-member.sql
-  redis:
-    host: 127.0.0.1
-    port: 6379
   config:
     import: optional:configserver:http://127.0.0.1:8888
 

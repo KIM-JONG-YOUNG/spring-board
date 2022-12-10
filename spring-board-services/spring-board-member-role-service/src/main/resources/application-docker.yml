@@ -15,9 +15,6 @@ spring:
       - classpath:schema-role.sql
       - classpath:schema-member.sql
       - classpath:schema-member-role.sql
-  redis:
-    host: redis
-    port: 6379
   config:
     import: optional:configserver:http://docker-config-service:8888
 
